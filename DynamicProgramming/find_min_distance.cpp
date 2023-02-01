@@ -39,7 +39,7 @@ void minEditDistance(const std::string &s1, const std::string &s2)
         for (int j = 1; j < len2 + 1; ++j)
         {
             cost = 1;
-            if (d[i - 1] == d[j - 1])
+            if (s1[i - 1] == s2[j - 1])
                 cost = 0;
             auto replace = d[i - 1][j - 1] + cost;
             auto remove = d[i][j - 1] + 1;
@@ -62,10 +62,10 @@ int main()
 {
     // std::string s1{"ACGTACGTACGT"};
     // std::string s2{"AGTACCTACCGT"};
-    // std::string s1{"GCTAC"};
-    // std::string s2{"CTCA"};
-    std::string s2{"labrador"};
-    std::string s1{"gibraltar"};
+     std::string s1{"GCTAC"};
+     std::string s2{"CTCA"};
+   // std::string s2{"labrador"};
+   // std::string s1{"gibraltar"};
     minEditDistance(s1, s2);
 
     return 0;
